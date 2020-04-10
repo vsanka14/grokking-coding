@@ -15,6 +15,9 @@ function smallestSubarrayWithGivenSum(arr, sum) {
     return minWindowSize;
 }
 
+// Time Complexity O(N+N) = O(N)
+// Space Complexity 0(1)
+
 // function smallestSubarrayWithGivenSum(arr, sum) {
 //     let flag = true;
 //     let windowSize = 1;
@@ -39,10 +42,10 @@ function smallestSubarrayWithGivenSum(arr, sum) {
 //     console.log(windowSize);
 //     return windowSize;
 // }
-smallestSubarrayWithGivenSum([2, 1, 5, 2, 3, 2], 7);
-smallestSubarrayWithGivenSum([2, 1, 5, 2, 8], 7);
-smallestSubarrayWithGivenSum([3, 4, 1, 1, 6], 8);
-
 
 //Time Complexity: O(n^2)
 //Space Complexity: 0(1)
+
+smallestSubarrayWithGivenSum([2, 1, 5, 2, 3, 2], 7);
+smallestSubarrayWithGivenSum([2, 1, 5, 2, 8], 7);
+smallestSubarrayWithGivenSum([3, 4, 1, 1, 6], 8);
