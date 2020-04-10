@@ -19,4 +19,7 @@ function longestSubstrKDistinctChars(str, k) {
 }
 
 
+// Time Complexity O(N+N) O(N)
+// Space Complexity O(1)
+
 longestSubstrKDistinctChars('araaci', 2);
