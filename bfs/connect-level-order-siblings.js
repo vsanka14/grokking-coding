@@ -30,32 +30,48 @@ class TreeNode {
       }
     }
   };
-  
   const connect_level_order_siblings = function(root) {
-    const result = [];
-    if(!root) return result;
+    if(!root) return;
     const queue = new Deque();
     queue.push(root);
     while(queue.length > 0) {
         const queueSize = queue.length;
-        const levelArr = [];
+        let previousNode = null;
         for(let i=0; i<queueSize; i++) {
             const currentNode = queue.shift();
+            if(previousNode) previousNode.next = currentNode;
             if(currentNode.left) queue.push(currentNode.left);
             if(currentNode.right) queue.push(currentNode.right);
-            levelArr.push(currentNode);
+            previousNode = currentNode;
         }
-        for(let i=0; i<levelArr.length; i++) {
-            if(levelArr[i+1]) {
-                levelArr[i].next = levelArr[i+1];
-            } else {
-                levelArr[i].next = null;
-            }
-        }
-        result.push(levelArr);
     }
-
   };
+
+  // const connect_level_order_siblings = function(root) {
+  //   const result = [];
+  //   if(!root) return result;
+  //   const queue = new Deque();
+  //   queue.push(root);
+  //   while(queue.length > 0) {
+  //       const queueSize = queue.length;
+  //       const levelArr = [];
+  //       for(let i=0; i<queueSize; i++) {
+  //           const currentNode = queue.shift();
+  //           if(currentNode.left) queue.push(currentNode.left);
+  //           if(currentNode.right) queue.push(currentNode.right);
+  //           levelArr.push(currentNode);
+  //       }
+  //       for(let i=0; i<levelArr.length; i++) {
+  //           if(levelArr[i+1]) {
+  //               levelArr[i].next = levelArr[i+1];
+  //           } else {
+  //               levelArr[i].next = null;
+  //           }
+  //       }
+  //       result.push(levelArr);
+  //   }
+
+  // };
   
   
   var root = new TreeNode(12);
